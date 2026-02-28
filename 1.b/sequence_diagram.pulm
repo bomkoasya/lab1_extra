@@ -1,0 +1,16 @@
+@startuml
+actor UserA
+participant "Client App" as App
+participant "Server Gate" as SRV
+database "Database" as DB
+actor UserB
+
+UserA -> App: Введення тексту + Click Send
+App -> App: Шифрування (MTProto)
+App -> SRV: POST /sendMessage
+activate SRV
+SRV -> DB: Save Message
+SRV --> App: ACK (Message ID, Status 200)
+deactivate SRV
+SRV -> UserB: Push Notification / WebSocket Update
+@enduml

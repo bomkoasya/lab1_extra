@@ -1,0 +1,31 @@
+@startuml
+title Decision Making Algorithm: To go for a PR or not?
+
+start
+:Arrive at the gym;
+
+if (How many hours of sleep?) then (< 5 hours)
+  :Drink a double espresso\nor an energy drink;
+else (8 hours)
+  :Feeling invincible;
+endif
+
+if (Is everything sore from last time?) then (Yes, everything)
+  :Tell yourself it's "just DOMS" (muscle soreness);
+  :Tighten the lifting belt even more;
+else (No)
+  :That's suspicious...\nProbably didn't try hard enough last time;
+endif
+
+:Look at the barbell;
+
+if (Is someone watching you in the gym?) then (Yes)
+  :Add another +5 kg for respect;
+else (No)
+  :Add another +5 kg anyway\n(for your own ego);
+endif
+
+:Inhale chalk dust (accidentally);
+:Approach the barbell;
+stop
+@enduml

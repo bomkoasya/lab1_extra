@@ -1,0 +1,9 @@
+@startuml
+[*] --> Offline
+Offline --> Online : App Opened
+Online --> Typing : User Input Starts
+Typing --> Online : Message Sent / Idle
+Online --> Away : Idle > 5 min
+Away --> Online : User Activity
+Online --> Offline : App Closed / Timeout
+@enduml

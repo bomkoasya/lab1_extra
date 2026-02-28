@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor "User" as User
+actor "Admin" as Admin
+
+rectangle "Telegram System" {
+  User -- (Send Message)
+  User -- (Create Group/Channel)
+  User -- (Make Call)
+  (Send Message) <.. (Attach File) : <<extend>>
+  Admin -- (Moderate Content)
+  Admin -- (Manage Permissions)
+}
+@enduml

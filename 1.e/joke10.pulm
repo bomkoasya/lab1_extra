@@ -1,0 +1,13 @@
+@startuml
+
+start
+repeat
+  :Drink Coffee;
+  :Write Code;
+  :Run Program;
+repeat while (Does it work?) is (No)
+-> Yes;
+:Go to Sleep;
+stop
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+abstract class Chat {
+  +id: Long
+  +title: String
+  +getHistory()
+}
+
+class User {
+  +phone: String
+  +username: String
+  +status: String
+}
+
+class Message {
+  +id: Long
+  +content: String
+  +timestamp: DateTime
+  +send()
+}
+
+class Group {
+  +adminCount: int
+  +addMember()
+}
+
+Chat <|-- PrivateChat
+Chat <|-- Group
+Chat <|-- Channel
+User "1" *-- "*" Message : sends
+Chat "1" *-- "*" Message : contains
+Group "1" o-- "*" User : members
+@enduml

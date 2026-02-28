@@ -1,0 +1,21 @@
+@startuml
+actor Me as M
+participant Manual as Doc
+participant Parts as P
+
+M -> Doc : read_step_1()
+Doc --> M : show_picture("Connect part A to part B")
+M -> P : connect(A, B)
+
+note right of M: 3 hours later...
+
+M -> Doc : read_final_step()
+Doc --> M : show_picture("Enjoy your new table")
+
+M -> P : admire_work()
+P --> M : remaining_item("1x Extra Screw")
+
+note over M, P: Staring intensely at the extra screw.\nIs it a spare? Or will the table collapse?
+
+M -> M : ignore_problem_and_hope_for_the_best()
+@enduml

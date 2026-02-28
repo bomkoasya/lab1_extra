@@ -1,0 +1,15 @@
+@startuml
+actor Student as S
+actor Teacher as P
+database ExaminationReport as D
+
+S -> P : enter_auditorium()
+P --> S : offer_to_pull_ticket()
+S -> P : pulls_ticket(№13)
+
+P --> S : fill_in_question("What is polymorphism?")
+S --> P : silence(long)
+
+P -> D : record_grade("FX")
+D --> S : send_for_resampling
+@enduml

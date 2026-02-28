@@ -1,0 +1,30 @@
+@startuml
+title Studying Anatomy at 2 AM
+
+start
+:Open textbook to Myology section;
+:Look at the first muscle;
+
+if (Is the name easy?) then (Yes)
+  :Memorize "Biceps";
+  :Feel like a future expert;
+else (No)
+  :Encounter "Sternocleidomastoid";
+  :Try to pronounce it aloud;
+  :Summon a Latin demon by accident;
+endif
+
+:Move to Arthrology;
+:Realize every single joint has 10 different ligaments;
+
+while (Is it time for the exam?) is (Not yet)
+  :Drink more coffee;
+  :Confuse origin and insertion points;
+  :Cry internally;
+endwhile (Yes)
+
+:Enter exam room;
+:Teacher asks a question;
+:Brain returns NULL;
+stop
+@enduml

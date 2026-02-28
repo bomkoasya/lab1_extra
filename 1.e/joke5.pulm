@@ -1,0 +1,21 @@
+@startuml
+actor JuniorDev as J
+participant GitHub as G
+actor TechLead as T
+
+J -> J : check_time("Friday, 16:55")
+J -> G : git_commit("-m 'minor typo fix'")
+J -> G : git_push("origin main --force")
+
+G --> J : pipeline_started()
+note over J: Time to go home and relax!
+
+G -> G : run_tests()
+G -> G : production_deployment()
+G --> T : critical_alert("PRODUCTION IS DOWN")
+
+T -> J : call_phone("What did you do?!")
+J -> T : reply("I just fixed a typo in the CSS!")
+T -> T : investigate_logs()
+T -> J : scream("YOU DROPPED THE DATABASE!")
+@endumlP

@@ -1,0 +1,21 @@
+@startuml
+actor Wife as W
+actor Programmer as P
+participant Store as S
+
+W -> P : give_task(Buy_bread, amount=1)
+W -> P : add_condition("If they have eggs, get 10")
+
+P -> S : go_to_store()
+P -> S : check_availability("Eggs")
+S --> P : return true (Eggs are in stock)
+
+note right of P: Logic executed:\nEggs exist -> Change bread amount to 10
+
+P -> S : buy("Bread", amount=10)
+S --> P : hand_over_receipt_and_goods()
+
+P -> W : return_home(10_loaves_of_bread)
+W -> P : shock("Why did you buy 10 loaves of bread?!")
+P --> W : calm_reply("Because they had eggs!")
+@enduml

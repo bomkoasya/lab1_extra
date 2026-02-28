@@ -1,0 +1,18 @@
+@startuml
+node "Client Device (Android/iOS/Web)" {
+  component "Telegram App"
+}
+
+node "Edge Server (MTProto Proxy)" as Edge
+
+node "Data Center (Primary)" {
+  component "API Gateway"
+  component "Message Broker"
+  database "PostgreSQL (Metadata)"
+  database "Cassandra (Messages)"
+  storage "Blob Storage (Media)"
+}
+
+"Telegram App" -- Edge : TCP/MTProto
+Edge -- "API Gateway" : Internal RPC
+@enduml

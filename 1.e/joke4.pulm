@@ -1,0 +1,23 @@
+@startuml
+actor Cat as C
+actor Owner as H
+participant Bowl as B
+
+note over C: State: Nighttime zoomies activated
+
+C -> H : make_sound("MEOW!")
+H -> C : reaction("Ignore + roll over")
+
+C -> H : push_vase_off_shelf()
+H -> H : wake_up(Adrenaline_level: 100)
+
+H -> C : yell("What are you doing?!")
+C -> B : approach_bowl()
+C -> H : stare("I can see the bottom, I'm starving to death")
+
+H -> B : pour_food()
+B --> C : state(Full)
+
+C -> C : sniff_and_walk_away()
+note right of C: Mission accomplished.\nJust wanted to check\nif the system works.
+@enduml

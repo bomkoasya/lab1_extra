@@ -1,0 +1,20 @@
+@startuml
+actor Alarm as A
+actor Human as H
+participant Brain as B
+
+A -> H : ring(07:00, "Wake me up inside")
+H -> A : hit_snooze(5_minutes)
+H -> B : command("Just 5 more minutes")
+B --> H : state(Sleep)
+
+A -> H : ring(07:05, Volume_MAX)
+H -> A : turn_off_completely()
+H -> B : promise("I'll just close my eyes for a second")
+B --> H : state(Deep_coma)
+
+note over A, B: 2 hours later...
+
+B -> H : panic_attack("WHAT TIME IS IT?!")
+H -> H : realization("Overslept the first lecture")
+@enduml

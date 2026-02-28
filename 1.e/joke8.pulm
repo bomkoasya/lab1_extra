@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor "Newbie" as Newbie
+actor "Lifter" as Lifter
+actor "Coach" as Coach
+
+package "Gym" {
+  usecase "Use a power frame for bicep curls" as UC1
+  usecase "Leave white traces of magnesia on everything" as UC2
+  usecase "Shout loudly 'PULL!'" as UC3
+  usecase "Forgetting to disassemble the barbell" as UC4
+  usecase "Drink protein from a shaker" as UC5
+}
+
+Newbie --> UC1
+Newbie --> UC4
+
+Lifter --> UC2
+Lifter --> UC5
+
+Coach --> UC3
+Coach --> UC5
+
+note right of Newbie : Does 15 abdominal exercises
+note right of Lifter : Rests 10 minutes between sets
+@enduml

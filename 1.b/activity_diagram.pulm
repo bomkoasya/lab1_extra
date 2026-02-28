@@ -1,0 +1,26 @@
+@startuml
+title Shared Workspace - Document Editing Flow
+
+start
+:User opens document in chat;
+
+if (Document is Locked?) then (yes)
+  :Enter View-Only Mode;
+  :Display "Locked by another user" notification;
+else (no)
+  :Acquire Editing Session;
+  :Initialize Real-time Sync;
+  
+  fork
+    :Process Local Text Edits;
+  fork again
+    :Sync Changes via WebSocket;
+    :Handle Remote Conflict Resolution;
+  end fork
+  
+  :Commit Changes to Version History;
+  :Release Session Lock;
+endif
+
+stop
+@enduml

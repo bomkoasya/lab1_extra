@@ -1,0 +1,14 @@
+@startuml
+actor Student as S
+actor Teacher as T
+participant Localhost as PC
+
+S -> PC : run_project()
+PC --> S : success("Everything is perfect")
+
+S -> T : submit_assignment()
+T -> T : open_on_their_computer()
+T --> S : grade("0 points, doesn't compile")
+
+S -> T : universal_excuse("But it works on my machine!")
+@enduml

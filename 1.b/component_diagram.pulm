@@ -1,0 +1,12 @@
+@startuml
+package "Mobile App" {
+  [UI Layer] as UI
+  [Local Cache] as DB_Local
+  [Network Module] as Net
+  [Media Processor] as Media
+}
+
+UI --> Net : Request Data
+Net --> DB_Local : Store Offline
+UI --> Media : Display Image
+@enduml
